@@ -1,0 +1,89 @@
+﻿@model IEnumerable<RequestItem>
+
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="page-heading">
+    <h3>Reports</h3>
+    <p>Project requests summary and statistics.</p>
+</div>
+
+<div class="row g-3">
+
+    <div class="col-md-3">
+        <div class="details-card">
+            <label>Total Requests</label>
+            <h2>@ViewBag.Total</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="details-card">
+            <label>Submitted</label>
+            <h2>@ViewBag.Submitted</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="details-card">
+            <label>In Progress</label>
+            <h2>@ViewBag.InProgress</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="details-card">
+            <label>Completed</label>
+            <h2>@ViewBag.Completed</h2>
+        </div>
+    </div>
+
+</div>
+
+<div class="details-card mt-4">
+
+    <h5 class="fw-bold">Project Summary</h5>
+
+    <div class="table-responsive mt-3">
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Total Requests</th>
+                    <th>Completed</th>
+                    <th>Pending</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var group in Model.GroupBy(x => x.Project))
+                {
+                    <tr>
+                        <td>@group.Key</td>
+
+                        <td>@group.Count()</td>
+
+                        <td>
+                            @group.Count(x =>
+                                x.Status == RequestStatus.Completed)
+                        </td>
+
+                        <td>
+                            @group.Count(x =>
+                                x.Status != RequestStatus.Completed &&
+                                x.Status != RequestStatus.Cancelled)
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

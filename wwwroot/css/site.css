@@ -1,0 +1,292 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6fb;
+    color: #293548;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* HEADER */
+
+.app-header {
+    background: white;
+    border: 1px solid #e5e8ed;
+}
+
+.header-top {
+    min-height: 95px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header-top h4 {
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .header-top small {
+        color: #7b8492;
+    }
+
+.sample-tag {
+    background: #edf2ff;
+    color: #354c7c;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.manager-info {
+    color: #687385;
+    line-height: 1.8;
+}
+
+/* NAVIGATION */
+
+.app-nav {
+    display: flex;
+    gap: 10px;
+    padding: 14px 30px;
+    border-top: 1px solid #e5e8ed;
+}
+
+    .app-nav a {
+        padding: 12px 17px;
+        color: #344054;
+        text-decoration: none;
+        border: 1px solid #e1e5eb;
+        border-radius: 9px;
+    }
+
+        .app-nav a:hover,
+        .app-nav a.active {
+            background: #2855c7;
+            color: white;
+        }
+
+/* MAIN */
+
+.app-content {
+    min-height: 75vh;
+    padding: 45px 30px;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+    .page-heading h3 {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .page-heading p {
+        color: #7b8492;
+        margin-top: 8px;
+    }
+
+/* CARD */
+
+.details-card {
+    background: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+    .details-card label {
+        color: #788394;
+        margin-bottom: 7px;
+        display: block;
+    }
+
+/* BUTTON */
+
+.btn-primary {
+    background: #2855c7;
+    border-color: #2855c7;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+    .btn-primary:hover {
+        background: #1d43a5;
+    }
+
+/* FORM */
+
+.form-control,
+.form-select {
+    min-height: 45px;
+    border: 1px solid #dfe3e9;
+    border-radius: 8px;
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #4775dc;
+    box-shadow: 0 0 0 3px rgba(40,85,199,.10);
+}
+
+/* FILTER */
+
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+    .filter-row label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    align-items: end;
+}
+
+/* TABLE */
+
+.request-table-wrapper {
+    background: white;
+    border-radius: 10px;
+    padding: 0 12px;
+}
+
+.request-table {
+    margin-bottom: 0;
+    min-width: 850px;
+}
+
+    .request-table th {
+        color: #657184;
+        font-weight: 600;
+        padding: 17px 12px;
+        border-bottom: 1px solid #e5e8ed;
+    }
+
+    .request-table td {
+        padding: 16px 12px;
+        border-bottom: 1px solid #e5e8ed;
+    }
+
+.request-link {
+    color: #42658e;
+    font-weight: 600;
+}
+
+/* STATUS */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #edf1f7;
+}
+
+    .status-badge.submitted,
+    .status-badge.assigned {
+        background: #eaf0ff;
+        color: #3155a0;
+    }
+
+    .status-badge.inprogress {
+        background: #e9efff;
+        color: #3155a0;
+    }
+
+    .status-badge.completed {
+        background: #ddf5e9;
+        color: #18794e;
+    }
+
+    .status-badge.onhold {
+        background: #fff2d6;
+        color: #9a6500;
+    }
+
+    .status-badge.cancelled {
+        background: #fde8e8;
+        color: #b42318;
+    }
+
+/* ACTION BUTTONS */
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+    .action-buttons form {
+        display: inline-block;
+    }
+
+/* ACTIVITY HISTORY */
+
+.activity-list li {
+    margin-bottom: 22px;
+    padding-left: 5px;
+}
+
+.activity-list small {
+    color: #87909d;
+}
+
+/* FOOTER */
+
+.app-footer {
+    background: white;
+    border-top: 1px solid #e1e5eb;
+    padding: 18px 30px;
+    color: #788394;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .header-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .app-nav {
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+
+    .app-content {
+        padding: 25px 15px;
+    }
+
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        align-items: center;
+    }
+
+    .details-card {
+        padding: 16px;
+    }
+}
